@@ -1,0 +1,15 @@
+Finally, you can configure local environment variables for each of your rails apps. 
+
+Simple.
+
+Gemfile:
+
+gem 'export', :git => 'git://github.com/richardcalahan/export.git'
+
+CLI:
+
+rails generate export
+
+Add environment variables to config/export.yml:
+
+FACEBOOK_APP_ID: '124323434564'
