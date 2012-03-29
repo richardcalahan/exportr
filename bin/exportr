@@ -2,6 +2,9 @@
 
 require 'exportr'
 
-COMMENTS = /(^\#.*\n)+/
-config = File.read("config/exportr.yml")
-puts config.match(COMMENTS)
+config_file = File.read("config/exportr.yml")
+comments = config_file.match(/(^\#.*\n)+/).to_s
+vars = YAML.load(config_file) || Hash.new
+
+
+
