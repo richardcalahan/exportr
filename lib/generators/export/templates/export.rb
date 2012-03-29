@@ -2,5 +2,5 @@
 
 if File.exists? "#{Rails.root}/config/export.yml"
   config = YAML.load(File.open("#{Rails.root}/config/export.yml"))
-  config.each_pair { |key,value| ENV[key] = value }
+  config.each_pair { |key,value| ENV[key] = value } if config
 end
