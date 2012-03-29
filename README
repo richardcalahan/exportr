@@ -4,12 +4,12 @@ Simple.
 
 Gemfile:
 
-gem 'export', :git => 'git://github.com/richardcalahan/export.git'
+gem 'exportr', :git => 'git://github.com/richardcalahan/exportr.git'
 
 CLI:
 
-rails generate export
+rails generate exportr
 
-Add environment variables to config/export.yml:
+Add environment variables to config/exportr.yml:
 
 FACEBOOK_APP_ID: '124323434564'
