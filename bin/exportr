@@ -3,5 +3,3 @@
 require 'exportr/command'
 
 Exportr::Command.run *ARGV
-
-
