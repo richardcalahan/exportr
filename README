@@ -4,7 +4,7 @@ Simple.
 
 Gemfile:
 
-gem 'exportr', :git => 'git://github.com/richardcalahan/exportr.git'
+gem 'exportr'
 
 CLI:
 
