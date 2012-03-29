@@ -1,5 +1,6 @@
 require 'optparse'
 require 'exportr/config'
+require 'exportr/error_messages'
 require 'exportr/helpers'
 
 module Exportr
@@ -7,13 +8,14 @@ module Exportr
   module Command
     
     extend Exportr::Config
+    extend Exportr::ErrorMessages
     extend Exportr::Helpers
 
     global_option :add, '-a', '--add VAR', 'Add environment variable'
     global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
 
     def self.run *argv
-      error "You must run exportr from the root of your application." unless at_root?
+      error not_root unless at_root?
       parser.parse! argv
     end
 
@@ -39,8 +41,7 @@ module Exportr
     end
 
     def self.read_config
-      puts config_file
-      error "You must run `rails generate exportr first.`" unless File.exists?(config_file)
+      error no_config_file unless File.exists?(config_file)
       File.read config_file
     end
 
