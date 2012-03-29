@@ -7,4 +7,10 @@ class ExportGenerator < Rails::Generators::Base
     copy_file 'export.rb', 'config/initializers/export.rb'
   end
 
+  def mod_gitignore
+    File.open("#{Rails.root}/.gitignore", 'a+') do |f|
+      f.puts 'config/export.yml'
+    end
+  end
+
 end
