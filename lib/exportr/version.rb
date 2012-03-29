@@ -1,3 +1,3 @@
 module Exportr
-  VERSION = "0.0.3p"
+  VERSION = "0.0.3"
 end
