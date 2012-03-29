@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Richard Calahan"]
   s.email       = ["richard@alldayeveryday.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = 'Rails environment variable manager'
+  s.description = 'Helps manage rails application specific environment variables for multiple apps in development.'
 
   s.rubyforge_project = "export"
 
