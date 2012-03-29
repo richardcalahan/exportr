@@ -3,6 +3,5 @@
 require 'exportr'
 
 COMMENTS = /(^\#.*\n)+/
-config = YAML.load(File.read("#{Rails.root}/config/exportr.yml"))
-puts config
+config = File.read("config/exportr.yml")
 puts config.match(COMMENTS)
