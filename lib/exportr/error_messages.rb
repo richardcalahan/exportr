@@ -7,7 +7,7 @@ module Exportr
     end
 
     def no_config_file
-      "You must run `rails generate exportr first.`"
+      "You must run `rails generate exportr` first."
     end
 
   end

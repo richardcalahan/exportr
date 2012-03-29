@@ -8,6 +8,7 @@ class ExportrGenerator < Rails::Generators::Base
   end
 
   def mod_gitignore
+    return if File.read("#{Rails.root}/.gitignore").match(/config\/exportr.yml/)
     File.open("#{Rails.root}/.gitignore", 'a+') do |f|
       f.puts 
       f.puts 
