@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "export/version"
+require "exportr/version"
 
 Gem::Specification.new do |s|
-  s.name        = "export"
-  s.version     = Export::VERSION
+  s.name        = "exportr"
+  s.version     = Exportr::VERSION
   s.authors     = ["Richard Calahan"]
   s.email       = ["richard@alldayeveryday.com"]
   s.homepage    = ""
   s.summary     = 'Rails environment variable manager'
   s.description = 'Helps manage rails application specific environment variables for multiple apps in development.'
 
-  s.rubyforge_project = "export"
+  s.rubyforge_project = "exportr"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
