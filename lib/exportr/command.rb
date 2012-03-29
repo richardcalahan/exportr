@@ -1,9 +1,12 @@
 require 'optparse'
+require 'exportr/config'
 
 module Exportr
 
   module Command
     
+    extend Exportr::Config
+
     def self.run *argv
       error "You must run exportr from the root of your application." unless at_root?
       parser.parse! argv
@@ -13,6 +16,7 @@ module Exportr
       vars = load_config
       vars.merge! val
       write_config vars
+      hello
     end
 
     def self.remove val
@@ -22,10 +26,10 @@ module Exportr
 
     def self.parser
       OptionParser.new do |parser|
-        parser.on '-a', '--add VARIABLE', 'Add to ENV' do |val|
+        parser.on '-a', '--add VAR', 'Add to ENV' do |val|
           add hashify(val)
         end
-        parser.on '-r', '--remove VARIABLE', 'Remove from ENV' do |val|
+        parser.on '-r', '--remove VAR', 'Remove from ENV' do |val|
           remove hashify(val)
         end
       end
