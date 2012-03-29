@@ -1,11 +1,16 @@
 require 'optparse'
 require 'exportr/config'
+require 'exportr/helpers'
 
 module Exportr
 
   module Command
     
     extend Exportr::Config
+    extend Exportr::Helpers
+
+    global_option :add, '-a', '--add VAR', 'Add environment variable'
+    global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
 
     def self.run *argv
       error "You must run exportr from the root of your application." unless at_root?
@@ -16,7 +21,6 @@ module Exportr
       vars = load_config
       vars.merge! val
       write_config vars
-      hello
     end
 
     def self.remove val
@@ -26,23 +30,23 @@ module Exportr
 
     def self.parser
       OptionParser.new do |parser|
-        parser.on '-a', '--add VAR', 'Add to ENV' do |val|
-          add hashify(val)
-        end
-        parser.on '-r', '--remove VAR', 'Remove from ENV' do |val|
-          remove hashify(val)
+        global_options.each do |opt|
+          parser.on *opt[:args] do |val|
+            send opt[:name], hashify(val)
+          end
         end
       end
     end
 
     def self.read_config
-      error "You must run `rails generate exportr first.`" unless File.exists?("config/exportr.yml")
-      File.read("config/exportr.yml")
+      puts config_file
+      error "You must run `rails generate exportr first.`" unless File.exists?(config_file)
+      File.read config_file
     end
 
     def self.write_config vars
       cm = comments
-      File.open 'config/exportr.yml', 'w+' do |f|
+      File.open config_file, 'w+' do |f|
         f.write cm << "\n" << dump_config(vars)
       end 
     end
@@ -59,20 +63,11 @@ module Exportr
       read_config.match(/(^\#.*\n)+/).to_s
     end
 
-    def self.at_root?
-      !!Dir.new(Dir.pwd).collect.detect { |f| f == 'Gemfile' }
-    end
-
     def self.hashify str
       arr = str.split '='
       hash = Hash.new
       hash[arr[0]] = arr[1]
       hash
-    end
-
-    def self.error msg
-      puts "ERROR: " << msg
-      exit 1
     end
 
   end
