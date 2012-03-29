@@ -9,6 +9,8 @@ class ExportGenerator < Rails::Generators::Base
 
   def mod_gitignore
     File.open("#{Rails.root}/.gitignore", 'a+') do |f|
+      f.puts 
+      f.puts '# Ignoring local env export'
       f.puts 'config/export.yml'
     end
   end
