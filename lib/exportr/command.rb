@@ -21,6 +21,7 @@ module Exportr
     global_option :add, '-a', '--add VAR', 'Add environment variable'
     global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
     global_option :clear, '-c', '--clear', 'Clear out all environment variables'
+    global_option :list, '-l', '--list', 'List all environment variables'
 
     def self.run *argv
       error NOT_ROOT unless at_root?
@@ -37,9 +38,19 @@ module Exportr
       write_config load_config.reject { |k,v| k == val.to_a[0][0] }
     end
 
-    def self.clear val
+    def self.clear val=nil
       log "Clearing environment variables..."
       write_config Hash.new
+    end
+
+    def self.list val=nil
+      log "Exportr Environment Variables"
+      log "--------------------------------------------------"
+      vars = load_config.to_a
+      vars.each do |var|
+        log "#{var[0]}=#{var[1]}"
+      end
+      log("none.") unless vars.any?
     end
 
     def self.parser
