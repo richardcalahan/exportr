@@ -41,4 +41,4 @@ or
     
 ### License
 
-Exportr is copyright 2012 Evan Richard Calahan and contributors at All Day Everyday. It is licensed under the MIT license. See the include LICENSE file for details.
+Exportr is copyright 2012 by Richard Calahan and contributors at All Day Everyday. It is licensed under the MIT license. See the include LICENSE file for details.
