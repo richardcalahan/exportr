@@ -2,15 +2,13 @@
 
 ## Description
 
-Managing environment variables locally is kind of a drag. If you only build one application at a time, you *could* simply export environment variables in your .bashrc. 
-But in reality you're working on 5 apps, each requiring different settings for Facebook, Google, AmazonS3, etc. 
+Managing environment variables locally is kind of a drag. If you only build one application at a time, you *could* simply export environment variables in your .bashrc. But in reality you're working on 5 apps at a time, each requiring different settings for Facebook, Google, AmazonS3, etc. 
 
-You probably set environment variables on your production servers to store configuration options for these services. But you probably also hard code
-'default' options to default to on your local machine. Hardcoding default configuation options, especially private keys for third party apis is an insane security risk.
+You probably set environment variables on your production servers to store configuration options for these services. Yet you might also hard code 'default' options to default to on your local machine. Hardcoding default configuation options, especially private keys for third party apis is an *insane* security risk.
 
-Problem solved.
+**Problem solved**.
 
-Exportr helps you manage local environment variables. Each set is scoped to a specific rails application in a local yaml file. The file is 'git ignored' when created, so it never leaves your machine. Its key:value pairs are loaded as environment variables when your application initializes.  
+Exportr helps you manage local environment variables. Each set is scoped to a specific rails application in `config/exportr.yml`. The file is 'git ignored' when created, so it never leaves your machine. Its key:value pairs are loaded as environment variables when your application initializes.  
 
 ### Setup
 
