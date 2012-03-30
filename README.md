@@ -44,4 +44,4 @@ You'll need to restart your webserver for the changes to take effect.
     
 ### License
 
-Exportr is copyright 2012 by Richard Calahan and contributors at [All Day Everyday](http://alldayeveryday.com). It is licensed under the MIT license. See the include LICENSE file for details.
+Exportr is &copy; 2012 by Richard Calahan and contributors at [All Day Everyday](http://alldayeveryday.com). It is licensed under the MIT license. See the include LICENSE file for details.
