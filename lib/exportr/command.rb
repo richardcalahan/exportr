@@ -7,9 +7,8 @@ module Exportr
 
   module Command
     
-    extend   Exportr::Config
-    include  Exportr::Config
-    extend   Exportr::Helpers
+    extend Exportr::Config
+    extend Exportr::Helpers
 
     def self.global_options
       @global_options ||= []
