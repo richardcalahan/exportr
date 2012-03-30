@@ -3,7 +3,10 @@
 ## Description
 
 Managing environment variables locally is kind of a drag. If you only build one application at a time, you could simply export environment variables in your .bashrc. 
-But in reality you're working on 5 apps, each requiring different environment variables for Facebook, Google, AmazonS3 etc.
+But in reality you're working on 5 apps, each requiring different settings for Facebook, Google, AmazonS3, etc. You probably set
+environment variables on your production servers to store configuration options for these services. But you probably also hard code
+'default' options to fallback to on your local machine. Harcoding default configuation options, especially private keys for apis is an insane security risk.
+
 
 Problem solved.
 
