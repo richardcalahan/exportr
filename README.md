@@ -1,6 +1,6 @@
 ### Exportr: A simple environment variable manager for developing rails applications.
 
-Simple.
+#### Quickstart
 
 Gemfile:
 
