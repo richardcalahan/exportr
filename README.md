@@ -8,11 +8,12 @@ Add the gem to your Gemfile.
 
     gem 'exportr'
 
-Install!
+Install it!
 
-`$ bundle install`
+    $ bundle install
 
-CLI:
+This will generate a yaml file in your config directory. It will store key:value pairs to be loaded
+as environment variables when your app launches. 
 
 rails generate exportr
 
