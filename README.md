@@ -32,7 +32,6 @@ There are two simple options for use with the command line tool: **add** and **r
 You can use flags longform `--add, --remove` or shorhand `-a, -r`.
 
     $ exportr --add KEY=VALUE
-or
 
     $ exportr --remove KEY
     
