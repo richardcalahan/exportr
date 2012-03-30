@@ -2,8 +2,12 @@ module Exportr
 	
   module Helpers
     
+    def log msg
+      STDOUT.puts msg
+    end
+
     def error msg
-      puts "ERROR: " << msg
+      STDERR.puts "ERROR: #{msg}"
       exit 1
     end
 
