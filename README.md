@@ -1,4 +1,4 @@
-## Exportr: An environment manager for rails application development
+## Exportr: Environment manager for Rails development
 
 ### Quickstart
 
