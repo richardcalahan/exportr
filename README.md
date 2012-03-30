@@ -1,5 +1,9 @@
 # Exportr: an environment manager for rails development
 
+## Description
+
+Managing environment variables locally is kind of a drag. If you only build one application at a time, yes, you could simply export environment variables in your .bashrc. 
+
 ### Setup
 
 Add the gem to your Gemfile.
