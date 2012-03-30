@@ -6,7 +6,7 @@
 
 Add the gem to your Gemfile.
 
-`gem 'exportr'`
+    gem 'exportr'
 
 Install!
 
