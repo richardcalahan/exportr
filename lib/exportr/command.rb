@@ -20,6 +20,7 @@ module Exportr
 
     global_option :add, '-a', '--add VAR', 'Add environment variable'
     global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
+    global_option :clear, '-c', '--clear', 'Clear out all environment variables'
 
     def self.run *argv
       error NOT_ROOT unless at_root?
@@ -27,11 +28,18 @@ module Exportr
     end
 
     def self.add val
+      log "Adding #{val.to_a[0][0]}=#{val.to_a[0][1]} to your environment..."
       write_config load_config.merge(val)
     end
 
     def self.remove val
+      log "Removing #{val.to_a[0][0]} from your environment..."
       write_config load_config.reject { |k,v| k == val.to_a[0][0] }
+    end
+
+    def self.clear val
+      log "Clearing environment variables..."
+      write_config Hash.new
     end
 
     def self.parser
@@ -54,7 +62,7 @@ module Exportr
       File.open CONFIG_FILE, 'w+' do |f|
         f.write cm << "\n" << dump_config(vars)
       end
-      log "Added #{vars.to_a[0][0]}=#{vars.to_a[0][1]}"
+      log "Done."
     end
 
     def self.load_config
@@ -70,7 +78,7 @@ module Exportr
     end
 
     def self.hashify str
-      arr = str.split '='
+      arr = str.split('=') rescue []
       hash = Hash.new
       hash[arr[0]] = arr[1]
       hash

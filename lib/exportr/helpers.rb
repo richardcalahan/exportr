@@ -3,11 +3,11 @@ module Exportr
   module Helpers
     
     def log msg
-      STDOUT.puts "\n | #{msg}\n\n"
+      STDOUT.puts " | #{msg}"
     end
 
     def error msg
-      STDERR.puts "\n | ERROR: #{msg}\n\n"
+      STDERR.puts "| ERROR: #{msg}"
       exit 1
     end
 
