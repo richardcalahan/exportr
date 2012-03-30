@@ -1,4 +1,4 @@
-Finally, you can configure local environment variables for each of your rails apps. 
+# Exportr: A simple environment variable manager for developing rails applications.
 
 Simple.
 

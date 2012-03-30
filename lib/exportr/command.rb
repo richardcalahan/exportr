@@ -2,6 +2,7 @@ require 'optparse'
 require 'exportr/config'
 require 'exportr/error_messages'
 require 'exportr/helpers'
+require 'yaml'
 
 module Exportr
 
