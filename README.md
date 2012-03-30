@@ -25,4 +25,5 @@ There are two simple options for use with the command line tool. `add` and `remo
 
     $ exportr --add KEY=VALUE
 or
+
     $ exportr --remove KEY
