@@ -7,7 +7,7 @@ module Exportr
     end
 
     def error msg
-      STDERR.puts "| ERROR: #{msg}"
+      STDERR.puts " | ERROR: #{msg}"
       exit 1
     end
 
