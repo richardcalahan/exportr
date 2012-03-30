@@ -53,7 +53,8 @@ module Exportr
       cm = comments
       File.open CONFIG_FILE, 'w+' do |f|
         f.write cm << "\n" << dump_config(vars)
-      end 
+      end
+      log "Added #{vars.to_a[0][0]}=#{vars.to_a[0][1]}"
     end
 
     def self.load_config
