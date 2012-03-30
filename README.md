@@ -1,10 +1,16 @@
 # Exportr: an environment manager for rails development
 
-### Quickstart
+## Quickstart
 
-Gemfile:
+### Rails
 
-gem 'exportr'
+Add the gem to your Gemfile.
+
+`gem 'exportr'`
+
+Install!
+
+`$ bundle install`
 
 CLI:
 
