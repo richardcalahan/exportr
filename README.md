@@ -23,6 +23,6 @@ The generator creates a yaml file in your config directory. It will store key:va
 
 There are two simple options for use with the command line tool. `add` and `remove`
 
-    $ exportr -a KEY=VALUE
-    
-    $ export -r KEY
+    $ exportr --add KEY=VALUE
+or
+    $ exportr --remove KEY
