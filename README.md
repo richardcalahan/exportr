@@ -10,7 +10,7 @@ You probably set environment variables on your production servers to store confi
 
 Problem solved.
 
-Exportr helps you manage local environment variables. Each set is scoped to a specific rails application in a local yaml file. The file is 'git ignored' when created, so it never leaves your machine. Its key:value pairs are loaded as environment variable when your application initializes.  
+Exportr helps you manage local environment variables. Each set is scoped to a specific rails application in a local yaml file. The file is 'git ignored' when created, so it never leaves your machine. Its key:value pairs are loaded as environment variables when your application initializes.  
 
 ### Setup
 
