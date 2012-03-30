@@ -2,13 +2,9 @@ module Exportr
 
   module ErrorMessages
     
-    def not_root
-      "You must run exportr from the root of your application."
-    end
+    NOT_ROOT        = "You must run exportr from the root of your application."
 
-    def no_config_file
-      "You must run `rails generate exportr` first. "
-    end
+    NO_CONFIG_FILE  = "You must run `rails generate exportr` first."
 
   end
 

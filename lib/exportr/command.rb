@@ -8,15 +8,15 @@ module Exportr
 
   module Command
     
-    extend Exportr::Config
-    extend Exportr::ErrorMessages
-    extend Exportr::Helpers
+    extend  Exportr::Config
+    include Exportr::ErrorMessages
+    extend  Exportr::Helpers
 
     global_option :add, '-a', '--add VAR', 'Add environment variable'
     global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
 
     def self.run *argv
-      error not_root unless at_root?
+      error NOT_ROOT unless at_root?
       parser.parse! argv
     end
 
@@ -42,7 +42,7 @@ module Exportr
     end
 
     def self.read_config
-      error no_config_file unless File.exists?(config_file)
+      error NO_CONFIG_FILE unless File.exists?(config_file)
       File.read config_file
     end
 
