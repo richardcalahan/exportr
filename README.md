@@ -2,6 +2,8 @@
 
 ## Quickstart
 
+### Setup
+
 Add the gem to your Gemfile.
 
     gem 'exportr'
