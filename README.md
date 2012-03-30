@@ -1,7 +1,5 @@
 # Exportr: an environment manager for rails development
 
-## Quickstart
-
 ### Setup
 
 Add the gem to your Gemfile.
