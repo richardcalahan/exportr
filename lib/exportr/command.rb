@@ -47,9 +47,7 @@ module Exportr
       log "Exportr Environment Variables"
       log "--------------------------------------------------"
       vars = load_config.to_a
-      vars.each do |var|
-        log "#{var[0]}=#{var[1]}"
-      end
+      vars.each { |var| log "#{var[0]}=#{var[1]}" }
       log("none.") unless vars.any?
     end
 
