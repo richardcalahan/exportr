@@ -2,17 +2,11 @@ module Exportr
   
   module Config
 
-    def global_options
-      @global_options ||= []
-    end
+    CONFIG_FILE     = 'config/exportr.yml'
 
-    def global_option name, *args
-      global_options << { :name => name, :args => args }
-    end
-
-    def config_file
-      "config/exportr.yml"
-    end
+    NOT_ROOT        = 'You must run exportr from the root of your application.'
+    
+    NO_CONFIG_FILE  = 'You must run `rails generate exportr` first.'
 
   end
 
