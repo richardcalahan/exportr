@@ -2,7 +2,12 @@
 
 ## Description
 
-Managing environment variables locally is kind of a drag. If you only build one application at a time, yes, you could simply export environment variables in your .bashrc. 
+Managing environment variables locally is kind of a drag. If you only build one application at a time, you could simply export environment variables in your .bashrc. 
+But in reality you're working on 5 apps, each requiring different environment variables for Facebook, Google, AmazonS3 etc.
+
+Problem solved.
+
+Exportr helps you manage local environment variables: each set scoped to a specific rails application.  
 
 ### Setup
 
@@ -30,3 +35,5 @@ You can use flags longform `--add` or shorhand `-a`.
 or
 
     $ exportr --remove KEY
+    
+### FYI
