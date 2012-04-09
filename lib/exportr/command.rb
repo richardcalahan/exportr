@@ -54,9 +54,7 @@ module Exportr
     def self.parser
       OptionParser.new do |parser|
         global_options.each do |opt|
-          parser.on *opt[:args] do |val|
-            send opt[:name], hashify(val)
-          end
+          parser.on *opt[:args] { |val| send opt[:name], hashify(val) }
         end
       end
     end
