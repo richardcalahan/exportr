@@ -14,6 +14,15 @@ class ExportrGenerator < Rails::Generators::Base
         config.each_pair { |key,value| ENV[key] = value } if config
       end
     end'
+
+    # Decrecation warning
+    if File.exists?("#{Rails.root}/config/initializers/exportr.rb")
+      puts
+      puts 'Deprecation Warning: Exportr no longer uses config/initialzers/exportr.rb to load environment variables.'
+      puts 'Please remove before restarting your server.'
+      puts
+    end
+
   end
 
   def mod_gitignore
