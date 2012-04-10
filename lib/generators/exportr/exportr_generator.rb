@@ -4,7 +4,6 @@ class ExportrGenerator < Rails::Generators::Base
 
   def generate_initializer
     copy_file 'exportr.yml', 'config/exportr.yml'
-    #    copy_file 'exportr.rb', 'config/initializers/exportr.rb'
     application '
     # Loads export.yml and sets key=value to the local environment
     config.before_initialize do
