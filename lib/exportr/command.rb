@@ -1,7 +1,7 @@
+require 'exportr/base'
 require 'exportr/command/core'
+require 'exportr/command/helpers'
 require 'exportr/command/messages'
-require 'exportr/config'
-require 'exportr/helpers'
 require 'exportr/version'
 require 'optparse'
 require 'yaml'
@@ -11,8 +11,8 @@ module Exportr
   module Command
 
     extend Exportr::Command::Core
+    extend Exportr::Command::Helpers
     extend Exportr::Command::Messages
-    extend Exportr::Helpers
 
     def self.core_options
       @global_options ||= []

@@ -4,7 +4,7 @@ module Exportr
   
   class Railtie < Rails::Railtie
 
-    extend Exportr::Helpers
+    extend Exportr::Command::Helpers
 
     config.before_initialize do
       if File.exists? config_file
