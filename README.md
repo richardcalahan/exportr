@@ -28,7 +28,7 @@ The generator creates a yaml file in your config directory. It will store key:va
 
 ### CLI
 
-There are several simple options for use with the command line tool.  
+You can edit the yaml config file directly, or use the handy cli. There are several simple options for use with the command line tool.  
 You can use flags longform *e.g.* `--add, --remove, --clear, --list` or shorhand *e.g.* `-a, -r, -c, -l`.
 
 **Add**
