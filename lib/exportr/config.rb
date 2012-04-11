@@ -6,7 +6,7 @@ module Exportr
     CONFIG_FILE     = 'config/exportr.yml'
     
     # Default error message if CLI is run from anywhere but the root
-    NOT_ROOT        = 'You must run exportr from the root of your application.'
+    NOT_RAILS       = 'Could not detect rails application.'
     
     # Default error message if there is no config file present.
     NO_CONFIG_FILE  = 'You must run `rails generate exportr` first.'

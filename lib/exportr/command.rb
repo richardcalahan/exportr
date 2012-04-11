@@ -7,8 +7,8 @@ module Exportr
 
   module Command
     
-    extend Exportr::Config
     extend Exportr::Helpers
+    extend Exportr::Config
 
     def self.global_options
       @global_options ||= []
@@ -24,7 +24,7 @@ module Exportr
     global_option :list, '-l', '--list', 'List all environment variables'
 
     def self.run *argv
-      error NOT_ROOT unless at_root?
+      error NOT_RAILS unless in_rails_application?
       parser.parse! argv
     end
 
@@ -60,13 +60,13 @@ module Exportr
     end
 
     def self.read_config
-      error NO_CONFIG_FILE unless File.exists?(CONFIG_FILE)
-      File.read CONFIG_FILE
+      error NO_CONFIG_FILE unless File.exists?(config_file)
+      File.read config_file
     end
 
     def self.write_config vars
       cm = comments
-      File.open CONFIG_FILE, 'w+' do |f|
+      File.open config_file, 'w+' do |f|
         f.write cm << "\n" << dump_config(vars)
       end
       log "Done."

@@ -1,7 +1,11 @@
+require 'exportr/config'
+
 module Exportr
 	
   module Helpers
-    
+
+    extend Exportr::Config
+
     def log msg
       STDOUT.puts " | #{msg}"
     end
@@ -11,8 +15,23 @@ module Exportr
       exit 1
     end
 
-    def at_root?
-      !!Dir.new(Dir.pwd).collect.detect { |f| f == 'Gemfile' }
+    def in_rails_application?
+      !!rails_root
+    end
+
+    def rails_root
+      begin
+        return Dir.pwd if File.exists?('script/rails')
+        raise
+      rescue
+        Dir.chdir '..'
+        retry unless Dir.pwd == '/'
+        return false
+      end      
+    end
+
+    def config_file
+      File.expand_path(CONFIG_FILE, rails_root)
     end
 
   end
