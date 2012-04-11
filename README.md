@@ -28,18 +28,30 @@ The generator creates a yaml file in your config directory. It will store key:va
 
 ### CLI
 
-There are four simple options for use with the command line tool: **add**, **remove**, **clear** and **list**.  
-You can use flags longform `--add, --remove, --clear, --list, --version, --help` or shorhand `-a, -r, -c, -l, -v, -h`.
+There are several simple options for use with the command line tool.  
+You can use flags longform, e.g. `--add, --remove, --clear, --list` or shorhand, e.g. `-a, -r, -c, -l`.
+
+**Add**
 
     $ exportr --add KEY=VALUE
 
+**Remove**
+
     $ exportr --remove KEY
-    
+
+**Clear**    
+
     $ exportr --clear
-    
+
+**List**
+
     $ exportr --list
 
+**Version**
+
     $ exportr --version
+
+**Help**
 
     $ exportr --help
 
