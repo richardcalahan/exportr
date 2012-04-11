@@ -1,5 +1,6 @@
 require 'exportr/config'
 require 'exportr/helpers'
+require 'exportr/version'
 require 'optparse'
 require 'yaml'
 
@@ -18,10 +19,11 @@ module Exportr
       global_options << { :name => name, :args => args }
     end
 
-    global_option :add, '-a', '--add VAR', 'Add environment variable'
-    global_option :remove, '-r', '--remove VAR', 'Remove environment variable'
+    global_option :add, '-a', '--add KEY=VALUE', 'Add environment variable'
+    global_option :remove, '-r', '--remove KEY', 'Remove environment variable'
     global_option :clear, '-c', '--clear', 'Clear out all environment variables'
     global_option :list, '-l', '--list', 'List all environment variables'
+    global_option :version, '-v', '--version', 'Get exportr version number'
 
     def self.run *argv
       error NOT_RAILS unless in_rails_application?
@@ -29,26 +31,37 @@ module Exportr
     end
 
     def self.add val
+      log
       log "Adding #{val.to_a[0][0]}=#{val.to_a[0][1]} to your environment..."
       write_config load_config.merge(val)
     end
 
     def self.remove val
+      log
       log "Removing #{val.to_a[0][0]} from your environment..."
       write_config load_config.reject { |k,v| k == val.to_a[0][0] }
     end
 
     def self.clear val=nil
+      log
       log "Clearing environment variables..."
       write_config Hash.new
     end
 
     def self.list val=nil
+      log
       log "Exportr Environment Variables"
       log "--------------------------------------------------"
       vars = load_config.to_a
       vars.each { |var| log "#{var[0]}=#{var[1]}" }
       log("none.") unless vars.any?
+      log
+    end
+
+    def self.version val=nil
+      log
+      log "Version #{Exportr::VERSION}"
+      log
     end
 
     def self.parser
@@ -70,6 +83,7 @@ module Exportr
         f.write cm << "\n" << dump_config(vars)
       end
       log "Done."
+      log
     end
 
     def self.load_config

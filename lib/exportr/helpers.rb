@@ -6,8 +6,8 @@ module Exportr
 
     extend Exportr::Config
 
-    def log msg
-      STDOUT.puts " | #{msg}"
+    def log msg=nil
+      STDOUT.puts msg ? " | #{msg}" : ""
     end
 
     def error msg
