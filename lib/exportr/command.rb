@@ -10,6 +10,7 @@ module Exportr
 
   module Command
 
+    extend Exportr::Base
     extend Exportr::Command::Core
     extend Exportr::Command::Helpers
     extend Exportr::Command::Messages

@@ -1,10 +1,10 @@
-require 'exportr/helpers'
+require 'exportr/base'
 
 module Exportr
   
   class Railtie < Rails::Railtie
 
-    extend Exportr::Command::Helpers
+    extend Exportr::Base
 
     config.before_initialize do
       if File.exists? config_file
