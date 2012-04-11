@@ -24,10 +24,11 @@ module Exportr
     global_option :clear, '-c', '--clear', 'Clear out all environment variables'
     global_option :list, '-l', '--list', 'List all environment variables'
     global_option :version, '-v', '--version', 'Get exportr version number'
+    global_option :help, '-h', '--help', 'Print this message'
 
     def self.run *argv
       error NOT_RAILS unless in_rails_application?
-      parser.parse! argv
+      argv.any? ? parser.parse!(argv) : help
     end
 
     def self.add val
@@ -42,13 +43,13 @@ module Exportr
       write_config load_config.reject { |k,v| k == val.to_a[0][0] }
     end
 
-    def self.clear val=nil
+    def self.clear
       log
       log "Clearing environment variables..."
       write_config Hash.new
     end
 
-    def self.list val=nil
+    def self.list
       log
       log "Exportr Environment Variables"
       log "--------------------------------------------------"
@@ -58,16 +59,26 @@ module Exportr
       log
     end
 
-    def self.version val=nil
+    def self.version
       log
       log "Version #{Exportr::VERSION}"
       log
     end
 
+    def self.help
+      STDOUT.puts
+      STDOUT.puts parser.help
+      STDOUT.puts
+    end
+
     def self.parser
       OptionParser.new do |parser|
+        parser.banner = "Usage:\n    exportr [options]"
+        parser.separator "\nOptions: "
         global_options.each do |opt|
-          parser.on *opt[:args] { |val| send opt[:name], hashify(val) }
+          parser.on *opt[:args] do |val| 
+            send(opt[:name], hashify(val)) rescue send opt[:name]
+          end
         end
       end
     end
