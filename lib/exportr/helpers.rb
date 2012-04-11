@@ -11,7 +11,9 @@ module Exportr
     end
 
     def error msg
+      STDERR.puts
       STDERR.puts " | ERROR: #{msg}"
+      STDERR.puts
       exit 1
     end
 
