@@ -13,8 +13,10 @@ Exportr helps you manage *local* environment variables. Each set is scoped to a 
 ### Setup
 
 Add the gem to your Gemfile.
-
-    gem 'exportr'
+    
+    group :developement do
+      gem 'exportr'
+    end   
 
 Install it!
 
