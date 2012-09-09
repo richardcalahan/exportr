@@ -14,7 +14,7 @@ Exportr helps you manage *local* environment variables. Each set is scoped to a 
 
 Add the gem to your Gemfile.
     
-    group :developement do
+    group :development do
       gem 'exportr'
     end   
 
