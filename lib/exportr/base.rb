@@ -3,7 +3,9 @@ module Exportr
   module Base
 
     # Default config file location. 
-    CONFIG_FILE = 'config/exportr.yml'
+    CONFIG_FILE       = 'config/exportr.yml'
+
+    SYSTEM_FILE_PATH = '/etc'
     
     def self.extended base
       constants.each do |const| 
@@ -24,6 +26,10 @@ module Exportr
 
     def config_file
       File.expand_path(CONFIG_FILE, rails_root)
+    end
+
+    def system_env_file
+      "#{SYSTEM_FILE_PATH}/#{Rails.application.class.to_s.split('::')[0].downcase}.yml"
     end
 
   end
