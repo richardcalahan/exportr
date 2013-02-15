@@ -28,8 +28,8 @@ module Exportr
       File.expand_path(CONFIG_FILE, rails_root)
     end
 
-    def system_env_file
-      "#{SYSTEM_FILE_PATH}/#{Rails.application.class.to_s.split('::')[0].downcase}.yml"
+    def system_env_file     
+      "#{SYSTEM_FILE_PATH}/#{Rails.application.class.to_s.split('::')[0].downcase}_#{ENV['RAILS_ENV'] || 'development'}.yml"
     end
 
   end
