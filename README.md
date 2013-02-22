@@ -61,6 +61,10 @@ You can use flags longform *e.g.* `--add, --remove, --clear, --list` or shorhand
 ### FYI
 
 You'll need to restart your webserver for the changes to take effect. 
+
+### New Updates!
+
+Exportr now supports system configuration files for production deployments of rails apps. By default, exportr will load the YAML file in /etc/#{application_name}_#{rails_env}.yml. The prefix, '/etc', can be overridden by setting the environment variable EXPORTR_PREFIX. 
     
 ### License
 
