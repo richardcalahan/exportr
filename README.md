@@ -70,4 +70,4 @@ Make sure the file is readable by your web process.
     
 ### License
 
-Exportr &copy; 2012 by Richard Calahan and contributors at [All Day Everyday](http://alldayeveryday.com). It is licensed under the MIT license. See the include LICENSE file for details.
+Exportr &copy; 2012 by Richard Calahan and contributors at [All Day Every Day](http://alldayeveryday.com). It is licensed under the MIT license. See the include LICENSE file for details.
