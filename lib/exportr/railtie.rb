@@ -13,8 +13,7 @@ module Exportr
         config.each_pair { |key,value| ENV[key] = value } if config
       end
 
-      if File.exists? system_env_file
-        puts ENV['RAILS_ENV']
+      if File.exists? system_config_file
         config = YAML.load(File.open(system_env_file))
         config.each_pair { |key,value| ENV[key] = value } if config
       end
