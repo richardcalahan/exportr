@@ -65,6 +65,8 @@ You'll need to restart your webserver for the changes to take effect.
 ### New Updates!
 
 Exportr now supports system configuration files for production deployments of rails apps. By default, exportr will load the YAML file in /etc/#{application_name}_#{rails_env}.yml. The prefix, '/etc', can be overridden by setting the environment variable EXPORTR_PREFIX. 
+
+Make sure the file is readable by your web process.
     
 ### License
 
