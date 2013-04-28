@@ -2,4 +2,6 @@
 
 ### Description
 
-new Exportr description...coming soon.
+At its core, Exportr is a simple environment variable manager for Ruby development. 
+
+It
