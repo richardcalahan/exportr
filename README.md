@@ -7,10 +7,8 @@ Exportr is a simple environment variable manager for Ruby development. It reads 
 The yaml file must be in one of Exportr's predefined locations. The paths are relative to the present working directory of the Ruby process. (The list will grow as Exportr is tested in various frameworks.)
 
 ```
-
 /exportr.yml
 /config/exportr.yml
-
 ```
 
 ### Usage
@@ -34,11 +32,9 @@ Exportr comes with a rails generator that will create `config/exportr.yml` and a
 Add the gem to your Gemfile
 
 ```
-
 group :development do
   gem 'exportr'
 end   
-
 ```
 
 Run bundle install.
