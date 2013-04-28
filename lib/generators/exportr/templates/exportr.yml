@@ -1,5 +1,5 @@
-# This file is loaded before app initialization to set app specific environment variables
-# set environment variables in the format [KEY]: [VALUE], each separated by a newline
+# This file is loaded with ruby's environment to set app specific environment variables.
+# Set environment variables in the format [KEY]: [VALUE]
 # 
 # FACEBOOK_APP_KEY: '234443366312034'
 # S3_BUCKET: 'myapp-production'

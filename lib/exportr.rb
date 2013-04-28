@@ -1,4 +1,4 @@
-require 'exportr/railtie'
-require 'exportr/version'
+require 'exportr.bundle'
+require 'exportr.so'
 
 module Exportr; end
