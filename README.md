@@ -11,9 +11,7 @@ The yaml file must be in one of Exportr's predefined locations. The paths are re
 /config/exportr.yml
 ```
 
-### Usage
-
-**Basic**
+### Basic Usage
 
 Install the gem.
 
@@ -25,7 +23,7 @@ Require the gem.
 
 `require 'exportr'`
 
-**Rails**
+### Rails
 
 Exportr comes with a rails generator that will create `config/exportr.yml` and add it to your `.gitignore` file.
 
