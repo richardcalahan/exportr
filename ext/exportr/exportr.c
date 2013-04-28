@@ -1,7 +1,5 @@
 #include "exportr.h"
 
-static const char *d_scan[] = { "", "config", 0 };
-
 static VALUE File = Qnil; 
 static VALUE rb_file ( void )
 {   
