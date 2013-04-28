@@ -2,6 +2,5 @@
 
 ### Description
 
-At its core, Exportr is a simple environment variable manager for Ruby development. 
-
-It
+Exportr is a simple environment variable manager for Ruby development. It reads key-value pairs from a yaml file 
+and loads these 
