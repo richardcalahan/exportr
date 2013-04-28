@@ -1,9 +1,4 @@
-#include "ruby.h"
-#include "ruby/util.h"
-#include <stdio.h>
-#include <unistd.h>
-
-#define FILE "exportr.yml"
+#include "exportr.h"
 
 static const char *d_scan[] = { "", "config", 0 };
 
