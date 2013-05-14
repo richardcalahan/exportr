@@ -96,7 +96,7 @@ void Init_exportr ( void )
     rb_define_singleton_method(rb_mExportr, "config_file", exportr_config_file, 0);
     
     /* 
-     * Manually call read on Exportr module when lib is loaded
+     * Manually call export on Exportr module when lib is loaded
      */
     rb_funcall(rb_mExportr, rb_intern("export"), 0);
 }
