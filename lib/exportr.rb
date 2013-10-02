@@ -1,4 +1,11 @@
-require 'exportr.bundle' rescue nil
-require 'exportr.so' rescue nil
+begin
+  require 'exportr.bundle'
+rescue LoadError
+end
+
+begin
+  require 'exportr.so'
+rescue LoadError
+end
 
 module Exportr; end
