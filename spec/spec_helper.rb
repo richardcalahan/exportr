@@ -1,5 +1,12 @@
-require 'exportr.bundle' rescue LoadError
-require 'exportr.so'     rescue LoadError
+begin 
+  require 'exportr.bundle' 
+rescue LoadError
+end
+
+begin
+  require 'exportr.so'
+rescue LoadError
+end
 
 RSpec.configure do |config|
   # config.treat_symbols_as_metadata_keys_with_true_values = true
