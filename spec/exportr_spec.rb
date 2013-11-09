@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'exportr'
+require 'exportr.bundle'
 
 describe Exportr do
 

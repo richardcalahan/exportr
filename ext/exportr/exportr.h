@@ -4,4 +4,4 @@
 
 #define FILE "exportr.yml"
 
-static const char *d_scan[] = { "", "config", 0 };
+static const char *d_scan[] = { "", "config", "/etc", 0 };
