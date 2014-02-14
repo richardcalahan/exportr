@@ -1,5 +1,5 @@
 # Exportr: An environment manager for Ruby development
-[![Code Climate](https://codeclimate.com/repos/527ec2e67e00a4097e069796/badges/bc8ef9513d73a626e57f/gpa.png)](https://codeclimate.com/repos/527ec2e67e00a4097e069796/feed)
+[![Code Climate](https://codeclimate.com/github/richardcalahan/exportr.png)](https://codeclimate.com/github/richardcalahan/exportr)
 [![Build Status](https://travis-ci.org/richardcalahan/exportr.png?branch=master)](https://travis-ci.org/richardcalahan/exportr)
 
 ## Description
