@@ -1,10 +1,10 @@
-# Exportr: An environment manager for Ruby development
+# Exportr: An environment manager for Ruby
 [![Code Climate](https://codeclimate.com/github/richardcalahan/exportr.png)](https://codeclimate.com/github/richardcalahan/exportr)
 [![Build Status](https://travis-ci.org/richardcalahan/exportr.png?branch=master)](https://travis-ci.org/richardcalahan/exportr)
 
 ## Description
 
-Exportr is a simple environment variable manager for Ruby development. It reads key-value pairs from a yaml file and merges these pairs into Ruby's ENV hash when the ruby process initializes.
+Exportr is a simple environment variable manager for Ruby applications. It reads key-value pairs from a yaml file and merges these pairs into Ruby's ENV hash when the ruby process initializes.
 
 ## Basic Usage
 
@@ -19,14 +19,12 @@ Create an exportr.yml file in one of two locations relative to your project root
 
 ## Rails
 
-Exportr comes with a rails generator that will create `config/exportr.yml` and adds it to your `.gitignore` file.
+Exportr comes with an optional rails generator that will create `config/exportr.yml` and add it to your `.gitignore` file.
 
 Add the gem to your Gemfile
 
 ```
-group :development do
-  gem 'exportr'
-end   
+gem 'exportr'
 ```
 
 Run bundle install.
